@@ -1,0 +1,40 @@
+expression_besoin:
+    path:     /
+    defaults: { _controller: "AppBundle:Expression_besoin:index" }
+expression_besoin_ajax:
+    path:     /ajaxliste
+    defaults: { _controller: "AppBundle:Expression_besoin:ajaxliste" }
+    requirements: { _method: post }
+
+expression_besoin_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Expression_besoin:show" }
+    
+expression_besoin_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Expression_besoin:newMultiple" }
+
+expression_besoin_create:
+    path:     /create
+    defaults: { _controller: "AppBundle:Expression_besoin:createMultiple" }
+    requirements: { _method: post }
+
+expression_besoin_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Expression_besoin:delete" }
+    requirements: { _method: post|delete }
+
+expression_besoin_remove:
+    path:     /remove
+    defaults: { _controller: "AppBundle:Expression_besoin:remove" }
+    requirements: { _method: post|delete }
+
+expression_besoin_accord:
+    path:     /accord
+    defaults: { _controller: "AppBundle:Expression_besoin:accord" }
+    requirements: { _method: post|accord }
+
+expression_besoin_desaccord:
+    path:     /desaccord
+    defaults: { _controller: "AppBundle:Expression_besoin:desaccord" }
+    requirements: { _method: post|desaccord }

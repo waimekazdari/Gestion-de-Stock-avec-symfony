@@ -1,0 +1,4 @@
+register:
+      path: /
+      defaults: { _controller: "AppBundle:Registration:register" }
+      requirements: { _method: post }

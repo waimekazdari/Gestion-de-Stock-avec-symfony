@@ -1,0 +1,39 @@
+sortie:
+    path:     /
+    defaults: { _controller: "AppBundle:Sortie:index" }
+sortie_ajax:
+    path:     /ajaxliste
+    defaults: { _controller: "AppBundle:Sortie:ajaxliste" }
+    requirements: { _method: post }
+
+sortie_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Sortie:show" }
+    
+sortie_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Sortie:newMultiple" }
+
+sortie_create:
+    path:     /create
+    defaults: { _controller: "AppBundle:Sortie:createMultiple" }
+    requirements: { _method: post }
+
+sortie_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Sortie:edit" }
+
+sortie_update:
+    path:     /{id}/update
+    defaults: { _controller: "AppBundle:Sortie:update" }
+    requirements: { _method: post|put }
+
+sortie_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Sortie:delete" }
+    requirements: { _method: post|delete }
+
+sortie_remove:
+    path:     /remove
+    defaults: { _controller: "AppBundle:Sortie:remove" }
+    requirements: { _method: post|delete }

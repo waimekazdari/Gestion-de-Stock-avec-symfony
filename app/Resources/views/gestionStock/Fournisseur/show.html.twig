@@ -1,0 +1,53 @@
+{% extends "layout.html.twig" %}
+{% block title %}
+show Fournisseur
+{% endblock %}
+{% block body %}
+<div class="btn-group pull-right" style="margin-top: 15px;">              
+  <button class="btn btn-primary "><span class="glyphicon glyphicon-cog"></span> Selectioner une action</button>
+  <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu"">
+    <li><a href="{{ path('fournisseur_edit', { 'id': entity.id }) }}"><span class="glyphicon glyphicon-edit"></span> modifier</a></li>
+    <li><a id="btnPrint"><span class="glyphicon glyphicon-print"></span> imprimer</a></li>
+    <li><a href="#" id="js-delete"><span class="glyphicon glyphicon-trash"></span> Supprimer</a></li>
+  </ul>
+</div>
+<div style="margin-left:220px; width:2000px;">
+<h3 ><span class="glyphicon glyphicon-user"></span> {{ entity.nom }}</h3>
+
+<div class="row">
+<div class="col-md-4">
+    <div class="box">
+      <header>
+          <h4><span class="glyphicon glyphicon-file"></span> Fournisseur</h4>
+      </header>
+        <ul class="list-group">
+          <li class="list-group-item"><strong>CIN du Fournisseur :</strong> {{ entity.CIN }}</li>
+          <li class="list-group-item"><strong>Ville du Fournisseur :</strong>  {{ entity.ville }} </li>
+          <li class="list-group-item"><strong>Pays fu Fournisseur :</strong> {{ entity.pays }}</li>
+          <li class="list-group-item"><strong>Email du Founisseur :</strong> {{ entity.email }}</li>
+          <li class="list-group-item"><strong>Tél du Founisseur :</strong> {{ entity.tel}}</li>
+          <li class="list-group-item"><strong>Adresse du Founisseur :</strong> {{ entity.adresse }}</li>
+        </ul>
+    </div>
+</div>
+</div>
+</div>
+<form id="deleteForm" action="{{ path('fournisseur_delete', { 'id': entity.id }) }}" method="POST">
+    {{ form_widget(delete_form) }}
+</form> 
+{% endblock %}
+{% block javascripts %}
+{{ parent() }}
+<script> 
+    (function($) {
+
+        $('#js-delete').on('click', function(){
+            $('#deleteForm').submit();
+            return false;
+        });
+    })(jQuery);
+</script>
+{% endblock %}

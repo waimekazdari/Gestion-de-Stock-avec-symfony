@@ -1,0 +1,26 @@
+{% for entity in entities %}
+    <tr>
+        <td class="hidden-print"><input type="checkbox" name="entities[]" value="{{ entity.id }}"></td>
+        <td>{{ entity.nom }}</td>
+        <td>{{ entity.CIN }}</td>
+        <td>{{ entity.email }}</td>
+        <td>{{ entity.tel }}</td>
+        <td class="hidden-print">
+            <div class="text-center">
+                <a class="btn btn-primary btn-xs" data-toggle="tooltip" data-placement="top" title="afficher" href="{{ path('fournisseur_show', { 'id': entity.id }) }}"><span class="glyphicon glyphicon-search"></span></a>
+                <a class="btn btn-danger btn-xs" data-toggle="tooltip" data-placement="top" title="modifier" href="{{ path('fournisseur_edit', { 'id': entity.id }) }}"><span class="glyphicon glyphicon-edit"></span></a>
+            </div>
+        </td> 
+    </tr>
+{% endfor %}
+
+{% include "default/pagination.html.twig" %}
+
+<script>   
+(function($) {
+
+    /* tooltip */
+    $('a[data-toggle="tooltip"]').tooltip();
+
+})(jQuery);
+</script>

@@ -1,0 +1,40 @@
+departement:
+    path:     /
+    defaults: { _controller: "AppBundle:Departement:index" }
+
+departement_ajax:
+    path:     /ajaxliste
+    defaults: { _controller: "AppBundle:Departement:ajaxliste" }
+    requirements: { _method: post }
+
+departement_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Departement:show" }
+
+departement_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Departement:new" }
+
+departement_create:
+    path:     /create
+    defaults: { _controller: "AppBundle:Departement:create" }
+    requirements: { _method: post }
+
+departement_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Departement:edit" }
+
+departement_update:
+    path:     /{id}/update
+    defaults: { _controller: "AppBundle:Departement:update" }
+    requirements: { _method: post|put }
+
+departement_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Departement:delete" }
+    requirements: { _method: post|delete }
+
+departement_remove:
+    path:     /remove
+    defaults: { _controller: "AppBundle:Departement:remove" }
+    requirements: { _method: post|delete }

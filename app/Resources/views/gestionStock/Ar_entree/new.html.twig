@@ -1,0 +1,40 @@
+{% extends "layout.html.twig" %}
+{% block title %}
+Nouvelle Entree Livraison
+{% endblock %}
+{% block stylesheet %}
+    {{ parent() }}
+    <link href="{{ asset('Resources/public/css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet">
+{% endblock %}
+{% block body %}
+<div class="col-md-12"  style="margin-left:50px;">
+    <h3><span class="glyphicon glyphicon-plus"></span> Ajout d'un nouveau Ligne </h3>
+
+<form  style="margin-left:200px;" action="{{ path('ar_entree_create') }}"  class="form-horizontal col-md-6" method="post"></br>
+
+    {% include "gestionStock/Ar_entree/form.html.twig" %}
+<br>
+    <div class="form-group" style="margin-left:-100px;">
+      <div class="col-sm-offset-6 col-sm-6">
+        <button type="submit" name="subvalider" class="btn btn-primary"><span class="glyphicon glyphicon-edit"></span> Ajouter</button>
+      </div>
+    </div>
+    {{ form_end(form)}}
+</form>
+</div>
+{% endblock %}
+{% block javascripts %}
+{{ parent() }}
+
+    <script src="{{ asset('Resources/js/moment.js') }}"></script>
+    <script src="{{ asset('Resources/js/bootstrap-datetimepicker.js') }}"></script> 
+<script> 
+    (function($) {
+
+        $('.has-datepicker').attr('data-date-format', 'YYYY-MM-DD').parent().datetimepicker({
+          pickTime: false
+        });
+
+    })(jQuery);
+</script>
+{% endblock %}

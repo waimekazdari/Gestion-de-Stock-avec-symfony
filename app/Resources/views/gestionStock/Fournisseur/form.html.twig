@@ -1,0 +1,15 @@
+<legend>Information du Fournisseur</legend> 
+
+{{ form_start(form,{'attr':{'novalidate':'novalidate'}})
+}}
+
+{{ form_row(form.nom, { 'label': 'le Nom du Fournisseur','attr':{'class':'form-control'}}) }}
+{{ form_row(form.CIN, { 'label': 'le CIN du Fournisseur','attr':{'class':'form-control'}}) }}
+{{ form_row(form.ville, { 'label': 'la ville du Fournisseur','attr':{'class':'form-control'}}) }}
+{{ form_row(form.pays, { 'label': 'le pays du Fournisseur','attr':{'class':'form-control'}}) }}
+{{ form_row(form.email, { 'label': 'Email du Fournisseur','attr':{'class':'form-control'}}) }}
+{{ form_row(form.tel, { 'label': 'Tél du Fournisseur','attr':{'class':'form-control'}}) }}
+{{ form_row(form.adresse, { 'label': 'L\'Adresse du Fournisseur','attr':{'class':'form-control'}}) }}
+
+
+{{ form_rest(form) }} 

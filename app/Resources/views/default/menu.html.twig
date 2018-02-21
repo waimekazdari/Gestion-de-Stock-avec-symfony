@@ -1,0 +1,78 @@
+{% set route = app.request.attributes.get('_route') %} 
+
+{% set articleMenu = ['article','article_show','article_new','article_edit'] %} 
+{% set article_userMenu = ['article_user','article_user_show'] %} 
+
+{% set fournisseurMenu = ['fournisseur','fournisseur_show','fournisseur_new','fournisseur_edit'] %} 
+{% set categoryMenu = ['category','category_show','category_new','category_edit'] %} 
+{% set serviceMenu = ['service','service_show','service_new','service_edit'] %} 
+{% set configMenu = ['config'] %} 
+{% set userMenu = ['ben_users','ben_show_user','ben_new_user','ben_edit_user'] %} 
+{% set departementMenu = ['departement','departement_show','departement_new','departement_edit'] %} 
+{% set livraisonMenu = ['livraison','livraison_show','livraison_new','livraison_edit'] %} 
+{% set ligneMenu = ['ligne','ligne_show','ligne_new','ligne_edit'] %} 
+{% set entreeMenu = ['entree','entree_show','entree_new','entree_edit'] %} 
+{% set ArticleEntreeMenu = ['ar_entree','ar_entree_show','ar_entree_new','ar_entree_edit'] %} 
+{% set sortieMenu = ['sortie','sortie_show','sortie_new','sortie_edit'] %} 
+{% set ArticleSortieMenu = ['ar_sortie','ar_sortie_show','ar_sortie_new','ar_sortie_edit'] %} 
+{% set Besoin = ['expression_besoin_show','expression_besoin','expression_besoin_new'] %} 
+{% set MesExpBesoin = ['mesExpression_besoin','mesExpression_besoin_show','mesExpression_besoin_new'] %} 
+
+
+
+<nav id="adminmenu">
+    <ul class="top-menu">
+        {% if is_granted("ROLE_ADMIN") %}
+        <li class="{% if route not in userMenu %}not-{% endif %}current"><a href="{{path('ben_users')}}"><span class="glyphicon glyphicon-user block"></span> <span class="menu-title">Employes</span></a></li>
+        {% endif %}
+        {% if is_granted("ROLE_ADMIN") %}
+        <li class="{% if route not in fournisseurMenu %}not-{% endif %}current"><a href="{{path('fournisseur')}}"><span class="glyphicon glyphicon-user block"></span> <span class="menu-title">Fournisseurs</span></a></li>
+        {% endif %}
+        {% if is_granted("ROLE_ADMIN") %}
+        <li class="{% if route not in articleMenu %}not-{% endif %}current"><a href="{{path('article')}}"><span class="glyphicon glyphicon-file block"></span> <span class="menu-title">Articles</span></a></li>
+        {% endif %}
+        {% if is_granted("ROLE_USER") or is_granted("ROLE_MANAGER") %}
+        <li class="{% if route not in article_userMenu %}not-{% endif %}current"><a href="{{path('article_user')}}"><span class="glyphicon glyphicon-th-list block"></span> <span class="menu-title">Articles</span></a></li>
+        {% endif %}
+        {% if is_granted("ROLE_ADMIN") %}
+        <li class="{% if route not in categoryMenu %}not-{% endif %}current"><a href="{{path('category')}}"><span class="glyphicon glyphicon-th block"></span> <span class="menu-title">Catégories</span></a></li>
+        {% endif %}
+        {% if is_granted("ROLE_ADMIN") %}
+        <li class="{% if route not in serviceMenu %}not-{% endif %}current"><a href="{{path('service')}}"><span class="glyphicon glyphicon-th-large block"></span> <span class="menu-title">Services</span></a></li>
+        {% endif %}
+        {% if is_granted("ROLE_ADMIN") %}
+        <li class="{% if route not in departementMenu %}not-{% endif %}current"><a href="{{path('departement')}}"><span class="glyphicon glyphicon-home block"></span> <span class="menu-title">Départemets</span></a></li>
+        {% endif %}
+        {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_MANAGER")  %}
+        <li class="{% if route not in livraisonMenu %}not-{% endif %}current"><a href="{{path('livraison')}}"><span class="glyphicon glyphicon-shopping-cart block"></span> <span class="menu-title">Livraisons</span></a></li>
+        {% endif %}
+        {% if is_granted("ROLE_ADMIN") %}
+        <li class="{% if route not in ligneMenu %}not-{% endif %}current"><a href="{{path('ligne')}}"><span class=" glyphicon glyphicon-list block"></span> <span class="menu-title">Lignes des Livraisons</span></a></li>
+        {% endif %}
+        {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_MANAGER") %}
+        <li class="{% if route not in entreeMenu %}not-{% endif %}current"><a href="{{path('entree')}}"><span class="glyphicon glyphicon-file block"></span> <span class="menu-title">Entrees</span></a></li>
+        {% endif %}
+        {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_MANAGER") %}
+        <li class="{% if route not in ArticleEntreeMenu %}not-{% endif %}current"><a href="{{path('ar_entree')}}"><span class="glyphicon glyphicon-list block"></span> <span class="menu-title">Articles Entrees</span></a></li>
+        {% endif %}
+        {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_MANAGER") %}
+        <li class="{% if route not in sortieMenu %}not-{% endif %}current"><a href="{{path('sortie')}}"><span class="glyphicon glyphicon-file block"></span> <span class="menu-title">Sorties</span></a></li>
+        {% endif %}
+        {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_MANAGER") %}
+        <li class="{% if route not in ArticleSortieMenu %}not-{% endif %}current"><a href="{{path('ar_sortie')}}"><span class="glyphicon glyphicon-list block"></span> <span class="menu-title">Articles Sorties</span></a></li>
+        {% endif %}
+
+        {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_MANAGER") %} 
+        <li class="{% if route not in Besoin %}not-{% endif %}current"><a href="{{path('expression_besoin')}}"><span class="glyphicon glyphicon-file block"></span> <span class="menu-title">Besoins</span></a></li>
+        {% endif %}
+        {% if is_granted("ROLE_USER") %} 
+        <li class="{% if route not in MesExpBesoin %}not-{% endif %}current"><a href="{{path('mesExpression_besoin')}}"><span class="glyphicon glyphicon-pencil block"></span> <span class="menu-title">Exprimer Besoin</span></a></li>
+        {% endif %}
+        {% if is_granted("ROLE_ADMIN") %} 
+        <li class="{% if route not in configMenu %}not-{% endif %}current"><a href="{{path('config')}}"><span class="glyphicon glyphicon-wrench block"></span> <span class="menu-title">Préférences</span></a>
+        </li>
+        {% endif %}
+        
+        <li class="not-current"><a href="#" id="trigger-shelf"><span class="glyphicon glyphicon-chevron-left block"></span>  <span class="menu-title">Collapse menu</span></a></li>
+    </ul>
+</nav>

@@ -1,0 +1,40 @@
+article:
+    path:     /
+    defaults: { _controller: "AppBundle:Article:index" }
+
+article_ajax:
+    path:     /ajaxliste
+    defaults: { _controller: "AppBundle:Article:ajaxliste" }
+    requirements: { _method: post }
+
+article_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Article:show" }
+
+article_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Article:new" }
+
+article_create:
+    path:     /create
+    defaults: { _controller: "AppBundle:Article:create" }
+    requirements: { _method: post }
+
+article_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Article:edit" }
+
+article_update:
+    path:     /{id}/update
+    defaults: { _controller: "AppBundle:Article:update" }
+    requirements: { _method: post|put }
+
+article_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Article:delete" }
+    requirements: { _method: post|delete }
+
+article_remove:
+    path:     /remove
+    defaults: { _controller: "AppBundle:Article:remove" }
+    requirements: { _method: post|delete }

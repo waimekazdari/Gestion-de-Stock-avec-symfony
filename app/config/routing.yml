@@ -1,0 +1,75 @@
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+
+gestion_stock_article:
+    resource: "Routing/article.yml"
+    prefix: /article
+
+gestion_stock_article_user:
+    resource: "Routing/article_user.yml"
+    prefix: /article_user
+
+gestion_stock_category:
+    resource: "Routing/category.yml"
+    prefix: /category
+
+gestion_stock_fournisseur:
+    resource: "Routing/fournisseur.yml"
+    prefix: /fournisseur
+
+gestion_stock_departement:
+    resource: "Routing/departement.yml"
+    prefix: /departement
+
+gestion_stock_service:
+    resource: "Routing/service.yml"
+    prefix: /service
+
+gestion_stock_config:
+    resource: "Routing/config.yml"
+    prefix:   /config
+
+gestion_stock_livraison:
+    resource: "Routing/livraison.yml"
+    prefix:   /livraison
+
+gestion_stock_ligne:
+    resource: "Routing/ligne.yml"
+    prefix:   /ligne
+
+gestion_stock_entree:
+    resource: "Routing/entree.yml"
+    prefix:   /entree
+
+gestion_stock_ar_entree:
+    resource: "Routing/ar_entree.yml"
+    prefix:   /ar_entree
+
+gestion_stock_sortie:
+    resource: "Routing/sortie.yml"
+    prefix:   /sortie
+
+gestion_stock_ar_sortie:
+    resource: "Routing/ar_sortie.yml"
+    prefix:   /ar_sortie
+
+gestion_stock_expression_besoin:
+    resource: "Routing/expression_besoin.yml"
+    prefix:   /expression_besoin
+
+gestion_stock_mesExpression_besoin:
+    resource: "Routing/mesExpression_besoin.yml"
+    prefix:   /mesExpression_besoin
+
+user_registration:
+    resource: "Routing/registration.yml"
+    prefix:   /register
+
+admin:
+    resource: "Routing/admin.yml"
+    prefix:   /admin
+
+myprofile:
+    resource: "Routing/myprofile.yml"
+    prefix:   /myprofile

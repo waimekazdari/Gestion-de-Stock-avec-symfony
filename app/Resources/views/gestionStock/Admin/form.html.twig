@@ -1,0 +1,60 @@
+<h3><span class="glyphicon glyphicon-user"></span> Mise à jour d'un Employe</h3>
+<form class="form-horizontal" action="{{ path('ben_update_user',{ 'id': entity.id }) }}" method="POST" enctype="multipart/form-data">        
+    <div class="tabbable">
+
+    <div class="tab-content">
+        <div class="tab-pane active" id="tab1">
+        <div class="form-group">
+          <label for="" class="col-md-4 control-label">Photo</label>
+          <div class="col-md-4">
+            <img class="myavatar col-md-4" src="{{ asset( entity.image.path )}}">
+          </div>
+        </div>  
+        <div class="form-group" style="margin-left:236px">            
+        {{ form_row(imgform.file, { 'label': ' '}) }}
+        </div><br/>
+        <div class="form-group">
+          <label for="" class="col-md-4 control-label">Nom de l'employe</label>
+          <div class="col-md-4">
+            <input type="text" name="emp[emp_name]" value="{{entity.employe.nom}}" class="form-control">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="" class="col-md-4 control-label">CIN de l'employe</label>
+          <div class="col-md-4">
+            <input type="text" name="emp[emp_cin]" value="{{entity.employe.cin}}" class="form-control">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="" class="col-md-4 control-label">num tele de l'employe</label>
+          <div class="col-md-4">
+            <input type="text" name="emp[emp_tel]" value="{{entity.employe.tel}}" class="form-control">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="" class="col-md-4 control-label">Adresse de l'employe</label>
+          <div class="col-md-4">
+            <textarea rows="3" name="emp[emp_adresse]" placeholder="ajouter une adresse..." class="form-control">{{entity.employe.adresse}}</textarea>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="" class="col-md-4 control-label">username</label>
+          <div class="col-md-4">
+            <input type="text" name="emp[emp_username]" value="{{entity.username}}" class="form-control">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="" class="col-md-4 control-label">Email</label>
+          <div class="col-md-4">
+            <input type="text" name="emp[emp_email]" value="{{entity.email}}" class="form-control">
+          </div>
+        </div>
+      </div><!-- /tab1 -->
+    </div> <!-- /tab-content -->
+   </div>
+       <div class="form-group">
+         <div class="col-md-offset-4 col-md-4">
+           <button type="submit" name="subvalider" class="btn btn-primary btn-embossed"><span class="fui-check-inverted"></span> Mettre à jour</button>
+         </div>
+       </div>
+</form>

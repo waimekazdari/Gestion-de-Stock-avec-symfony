@@ -1,0 +1,7 @@
+{% for entree in entrees %}
+    <tr>
+        <td>{{ entree.article.libele }}</td>
+        <td>{{ entree.article.ref }}</td>
+        <td>{{ entree.quantite }}</td>
+    </tr>
+{% endfor %}

@@ -1,0 +1,40 @@
+fournisseur:
+    path:     /
+    defaults: { _controller: "AppBundle:Fournisseur:index" }
+
+fournisseur_ajax:
+    path:     /ajaxliste
+    defaults: { _controller: "AppBundle:Fournisseur:ajaxliste" }
+    requirements: { _method: post }
+
+fournisseur_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Fournisseur:show" }
+
+fournisseur_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Fournisseur:new" }
+
+fournisseur_create:
+    path:     /create
+    defaults: { _controller: "AppBundle:Fournisseur:create" }
+    requirements: { _method: post }
+
+fournisseur_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Fournisseur:edit" }
+
+fournisseur_update:
+    path:     /{id}/update
+    defaults: { _controller: "AppBundle:Fournisseur:update" }
+    requirements: { _method: post|put }
+
+fournisseur_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Fournisseur:delete" }
+    requirements: { _method: post|delete }
+
+fournisseur_remove:
+    path:     /remove
+    defaults: { _controller: "AppBundle:Fournisseur:remove" }
+    requirements: { _method: post|delete }

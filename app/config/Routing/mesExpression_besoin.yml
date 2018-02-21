@@ -1,0 +1,30 @@
+mesExpression_besoin:
+    path:     /
+    defaults: { _controller: "AppBundle:MesExpression_besoin:index" }
+mesExpression_besoin_ajax:
+    path:     /ajaxliste
+    defaults: { _controller: "AppBundle:MesExpression_besoin:ajaxliste" }
+    requirements: { _method: post }
+
+mesExpression_besoin_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:MesExpression_besoin:show" }
+    
+mesExpression_besoin_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:MesExpression_besoin:newMultiple" }
+
+mesExpression_besoin_create:
+    path:     /create
+    defaults: { _controller: "AppBundle:MesExpression_besoin:createMultiple" }
+    requirements: { _method: post }
+
+mesExpression_besoin_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:MesExpression_besoin:delete" }
+    requirements: { _method: post|delete }
+
+mesExpression_besoin_remove:
+    path:     /remove
+    defaults: { _controller: "AppBundle:MesExpression_besoin:remove" }
+    requirements: { _method: post|delete }

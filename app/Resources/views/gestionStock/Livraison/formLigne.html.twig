@@ -1,0 +1,10 @@
+{% for ligne in lignes %}
+    <tr>
+        <td>{{ ligne.article.libele }}</td>
+        <td>{{ ligne.article.ref }}</td>
+        <td>{{ ligne.quantite }}</td>
+        <td>{{ ligne.prix }}</td>
+        <td>{{ ligne.duree }}</td>
+        <td>{{ ligne.dateGarantie|date("d/m/y") }}</td>
+    </tr>
+{% endfor %}

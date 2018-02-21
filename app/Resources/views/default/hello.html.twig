@@ -1,0 +1,73 @@
+{# app/Resources/views/default/hello.html.twig #}
+{% extends 'base.html.twig' %}
+{% block body %}
+<h1>Hi ! Welcome to Symfony!</h1>
+{% filter upper %}
+<div class="btn-group pull-right" style="margin-top: 15px;">              
+  <button class="btn btn-primary "><span class="glyphicon glyphicon-cog"></span> Selectioner une action</button>
+  <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu"">
+    <li><a href=""><span class="glyphicon glyphicon-edit"></span> modifier</a></li>
+    <li><a id="btnPrint"><span class="glyphicon glyphicon-print"></span> imprimer</a></li>
+    <li><a href="#" id="js-delete"><span class="glyphicon glyphicon-trash"></span> Supprimer</a></li>
+  </ul>
+</div>
+    je vais être écrit en majuscule
+{% endfilter %}
+{# {% include "default/hello.html.twig" with {'name': 'kazdari'} %} #}
+{% filter upper|escape %}
+    je vais être écrit en majuscule <em>et échappé</em>
+{% endfilter %}
+
+{% autoescape false %}
+<strong>Je vais être affiché en gras</strong>
+{% endautoescape %}
+
+{% for i in 0..10 %}
+    * {{ i }}
+{% endfor %}
+
+{% for letter in 'a'|upper..'z'|upper %}
+    * {{ letter }}
+{% endfor %}
+<ul>
+    {% for user in 0..10 %}
+        <li>{{user|e}}</li>
+    {% else %}
+        <li><em>no user found</em></li>
+    {% endfor %}
+</ul>
+
+{% import 'default/marcos.html' as forms %}
+
+<dl>
+    <dt>Username</dt>
+    <dd>{{ forms.input('username') }}</dd>
+    <dt>Password</dt>
+    <dd>{{ forms.input('password', none, 'password') }}</dd>
+</dl>
+<p>{{ forms.textarea('comment') }}</p>
+{% endblock %}
+
+{#  l'héritage 
+Dans cet exemple, le template parent s'appelle base.html. Un petit point dans le template enfant. Dans le block head, il y a un {{ parent() }}. Cette fonction signifie que le bloc n'est pas nettoyé et le contenu du bloc head sera celui présent dans le template parent et le template enfant.
+#}
+{# 
+{% extends "default/forme.html" %}
+
+{% block title %}Index{% endblock %}
+{% block head %}
+  {{ parent() }}
+  <style type="text/css">
+    .important { color: #336699; }
+  </style>
+{% endblock %}
+{% block content %}
+  <h1>Index</h1>
+  <p class="important">
+    Welcome on my awesome homepage.
+  </p>
+{% endblock %}
+#}

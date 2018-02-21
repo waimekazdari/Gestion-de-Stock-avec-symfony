@@ -1,0 +1,17 @@
+myprofile_edit:
+    path:  /me/edit/{name}
+    defaults: { _controller: "AppBundle:Myprofile:edit" }
+myprofile_update:
+    path:  _me/{id}/update
+    defaults: { _controller: "AppBundle:Myprofile:update" }
+    requirements: { _method: post }
+myprofile_show:
+    path:  /show/{id}
+    defaults: { _controller: "AppBundle:Myprofile:show" }
+password_edit:
+    path:  /edit
+    defaults: { _controller: "AppBundle:Myprofile:changePasswordForm" }
+password_update:
+    path:  /update
+    defaults: { _controller: "AppBundle:Myprofile:changePassword" }
+    requirements: { _method: post }

@@ -1,0 +1,63 @@
+{% extends "layout.html.twig" %}
+{% block title %}
+Liste des Articles
+{% endblock %}
+{% block body %}
+<div>
+<center><H1 style ="color:#043F71;font-family: 'Open Sans';"> Gestion de Stock </H1></center>
+<center><h3 style ="color:#043F71"> Ministère de la pêche Maritime </h3></center>
+</div>
+<center>
+<div style = "width: 800px;" id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <img src="{{ asset('Resources/public/images/1.jpg')}}" alt="First slide">
+          </div>
+          <div class="item">
+            <img src="{{ asset('Resources/public/images/2.jpg')}}" alt="Second slide">
+          </div>
+          <div class="item">
+            <img src="{{ asset('Resources/public/images/3.png')}}" alt="Third slide">
+          </div>
+          <div class="item">
+            <img src="{{ asset('Resources/public/images/5.png')}}" alt="Third slide">
+          </div>
+          <div class="item">
+            <img src="{{ asset('Resources/public/images/6.png')}}" alt="Third slide">
+          </div>
+          <div class="item">
+            <img src="{{ asset('Resources/public/images/7.jpg')}}" alt="Third slide">
+          </div>
+          <div class="item">
+            <img src="{{ asset('Resources/public/images/8.jpg')}}" alt="Third slide">
+          </div>
+          <div class="item">
+            <img src="{{ asset('Resources/public/images/9.png')}}" alt="Third slide">
+          </div>
+        </div>
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+</div>
+</center>
+{% endblock %}
+{% block javascripts %}
+{{ parent() }}
+<script> 
+    (function($) {
+
+        
+        });
+    })(jQuery);
+</script>
+{% endblock %}

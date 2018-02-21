@@ -1,0 +1,39 @@
+livraison:
+    path:     /
+    defaults: { _controller: "AppBundle:Livraison:index" }
+livraison_ajax:
+    path:     /ajaxliste
+    defaults: { _controller: "AppBundle:Livraison:ajaxliste" }
+    requirements: { _method: post }
+
+livraison_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Livraison:show" }
+    
+livraison_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Livraison:newMultiple" }
+
+livraison_create:
+    path:     /create
+    defaults: { _controller: "AppBundle:Livraison:createMultiple" }
+    requirements: { _method: post }
+
+livraison_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Livraison:edit" }
+
+livraison_update:
+    path:     /{id}/update
+    defaults: { _controller: "AppBundle:Livraison:update" }
+    requirements: { _method: post|put }
+
+livraison_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Livraison:delete" }
+    requirements: { _method: post|delete }
+
+livraison_remove:
+    path:     /remove
+    defaults: { _controller: "AppBundle:Livraison:remove" }
+    requirements: { _method: post|delete }

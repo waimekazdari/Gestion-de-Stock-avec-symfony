@@ -1,0 +1,7 @@
+{% for sortie in sorties %}
+    <tr>
+        <td>{{ sortie.article.libele }}</td>
+        <td>{{ sortie.article.ref }}</td>
+        <td>{{ sortie.quantite }}</td>
+    </tr>
+{% endfor %}

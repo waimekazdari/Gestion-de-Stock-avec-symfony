@@ -1,0 +1,10 @@
+<legend>Information de a Catégory</legend> 
+
+{{ form_start(form,{'attr':{'novalidate':'novalidate'}})
+}}
+
+{{ form_row(form.code, { 'label': 'le code de la Catégorie','attr':{'class':'form-control'}}) }}
+{{ form_row(form.libele, { 'label': 'le nom de la Catégorie','attr':{'class':'form-control'}}) }}
+
+
+{{ form_rest(form) }} 

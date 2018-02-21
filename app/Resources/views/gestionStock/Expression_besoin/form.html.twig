@@ -1,0 +1,22 @@
+<legend>Information du Besoin </legend> 
+		
+	<div class="form-group">
+          <label for="" class="col-md-4 control-label">Nom de l'employe  :</label>
+          <div class="col-md-4">
+            <input type="text" name="exp[employe]" value="{{entity.employe.nom}}" class="form-control">
+          </div>
+    </div>
+    <div class="form-group">
+          <label for="" class="col-md-4 control-label">Accord  :</label>
+          <div class="col-md-4">
+            <input type="checkbox" name="exp[accord]" value="{{entity.accord}}" class="form-control">
+          </div>
+    </div>
+
+{#
+{{ form_row(form.employe, { 'label': 'Employe','attr':{'class':'form-control'}}) }}
+<br/>
+{{ form_row(form.accord, { 'label': 'Accord','attr':{'class':'form-control'}}) }}
+
+{{ form_rest(form) }} 
+#}

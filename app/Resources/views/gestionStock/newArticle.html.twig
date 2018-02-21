@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+{{ form_start(form,{'attr':{'novalidate':'novalidate'}})
+}}
+<div class="form-group">
+{{form_row(form.ref,{'attr':{'class':'form-control'}})}}
+</div>
+<div class="form-group">
+{{form_label(form.code,'le code de l\'Article')}}
+{{form_widget(form.code,{'attr':{'class':'form-control'}})}}
+{{form_errors(form.code,{'attr':{'class':'help-block'}})}}
+</div>
+<div class="form-group">
+{{form_row(form.libele)}}
+</div>
+<div class="form-group">
+{{form_row(form.category)}}
+</div>
+
+<button type="submit"> Ajouter </button>
+<div class="alert alert-danger">{{ form_rest(form)}} </div>
+{{ form_end(form)}}
+{% block javascripts%}
+ <script src="{{ asset('Resources/public/js/jquery.min.js') }}"></script>
+    <script>window.jQuery || document.write('<script src="../../Resources/public/js/jquery.min.js"><\/script>')</script>
+
+    <script src="{{ asset('Resources/public/js/bootstrap.min.js') }}"></script>
+
+    <script src="{{ asset('Resources/public/js/holder.js') }}"></script>
+ {% endblock%}
+{% endblock %}

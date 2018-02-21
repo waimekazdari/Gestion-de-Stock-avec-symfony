@@ -1,0 +1,22 @@
+article_user:
+    path:     /
+    defaults: { _controller: "AppBundle:Article_User:index" }
+
+article_user_ajax:
+    path:     /ajaxliste
+    defaults: { _controller: "AppBundle:Article_User:ajaxliste" }
+    requirements: { _method: post }
+
+article_user_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Article_User:show" }
+    
+article_user_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Article_User:delete" }
+    requirements: { _method: post|delete }
+
+article_user_remove:
+    path:     /remove
+    defaults: { _controller: "AppBundle:Article_User:remove" }
+    requirements: { _method: post|delete }

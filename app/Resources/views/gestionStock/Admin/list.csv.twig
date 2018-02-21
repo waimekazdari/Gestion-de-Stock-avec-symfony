@@ -1,0 +1,4 @@
+id, username, email, prenom, nom, role, date d'inscription, dernière connexion
+{% for entity in entities %}
+{{ entity.id }}, {{ entity.username }}, {{ entity.email }},{{ entity.roles }}, {{ entity.created|date('Y-m-d') }}
+ {% endfor %} 

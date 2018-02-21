@@ -1,0 +1,47 @@
+#admin section
+ben_users:
+    path:  /
+    defaults: { _controller: "AppBundle:Admin:index" }
+ben_users_ajax:
+    path:  /userslist
+    defaults: { _controller: "AppBundle:Admin:ajaxList" }
+    requirements: { _method: post }
+ben_show_user:
+    path:  /show/{id}
+    defaults: { _controller: "AppBundle:Admin:show" }
+ben_new_user:
+    path:  /new
+    defaults: { _controller: "AppBundle:Admin:new" }
+ben_add_user:
+    path:  /add
+    defaults: { _controller: "AppBundle:Admin:add" }
+    requirements: { _method: post }
+ben_edit_user:
+    path:  /edit/{id}
+    defaults: { _controller: "AppBundle:Admin:edit" }
+ben_update_user:
+    path:  /update/{id}
+    defaults: { _controller: "AppBundle:Admin:update" }
+    requirements: { _method: post }
+ben_users_list:
+    path:  /users/list
+    defaults: { _controller: "AppBundle:Admin:usersList" }
+    requirements: { _method: post }
+ben_enable_users:
+    path:  /users/active/{etat}
+    defaults: { _controller: "AppBundle:Admin:enableUsers" , etat: 1}
+    requirements: { _method: post }
+ben_promote_users:
+    path:  /promote/{role}
+    defaults: { _controller: "AppBundle:Admin:setRole" , role: user}
+    requirements: { _method: post }
+ben_delete_user:
+    path:  /delete/{id}
+    defaults: { _controller: AppBundle:Admin:delete }
+ben_remove_users:
+    path:  /delete
+    defaults: { _controller: "AppBundle:Admin:removeUsers" }
+    requirements: { _method: post }
+ben_users_export:
+    path:  /export
+    defaults: { _controller: "AppBundle:Admin:export" }

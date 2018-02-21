@@ -1,0 +1,34 @@
+{% extends "layout.html.twig" %}
+{% block title %}
+Inscription
+{% endblock %}
+{% block body %}
+{% block container %}
+<body class="sign-in-bg">
+<div class="container">
+<br/>
+<h2><b><span class="glyphicon glyphicon-user block" style="margin-left:240px;"></span> Inscription </b></h2>
+<br/>
+<div style="width:900px; margin :30px ;margin-left:240px;background-color:#dfe2f5;padding:20px; padding-left:50px;padding-right:50px;">
+<legend>Information d'Utilisateur</legend> 
+{{ form_start(form,{'attr':{'novalidate':'novalidate'}})
+}}
+{{form_row(form.email,{'attr':{'class':'form-control'}})}}
+{{form_row(form.username,{'attr':{'class':'form-control'}})}}
+{{ form_row(form.plainPassword.first,{'attr':{'class':'form-control'}}) }}
+{{ form_row(form.plainPassword.second,{'attr':{'class':'form-control'}}) }}
+
+{{form_row(form.image.file,{'attr':{'class':'form-control'}})}}
+{{form_row(form.employe.nom,{'attr':{'class':'form-control'}})}}
+{{form_row(form.employe.CIN,{'attr':{'class':'form-control'}})}}
+{{form_row(form.employe.tel,{'attr':{'class':'form-control'}})}}
+{{form_row(form.employe.adresse,{'attr':{'class':'form-control'}})}}
+{{form_row(form.service,{'attr':{'class':'form-control'}})}}
+
+<br><center><button class="btn btn-success" type="submit">Registrer!</button></center>
+{{ form_end(form) }}
+	</div>
+</div>
+{% endblock %}
+{% endblock %}
+

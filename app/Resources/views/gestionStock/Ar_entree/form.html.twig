@@ -1,0 +1,10 @@
+<legend>Information de l'Article</legend> 
+
+{{ form_start(form,{'attr':{'novalidate':'novalidate'}}) }}
+
+{{ form_row(form.entree, { 'label': 'La Référence de l\'Entrée de l\'Article','attr':{'class':'form-control'}}) }}
+{{ form_row(form.article, { 'label': 'La Référence de l\'Article de l\'Entrée','attr':{'class':'form-control'}}) }}
+{{ form_row(form.quantite, { 'label': 'La Quantite de l\'Article','attr':{'class':'form-control'}}) }}
+
+
+{{ form_rest(form) }} 

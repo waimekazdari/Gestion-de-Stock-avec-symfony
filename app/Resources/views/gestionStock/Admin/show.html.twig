@@ -1,0 +1,63 @@
+{% extends "layout.html.twig" %}
+{% block title %}
+Show Employe
+{% endblock %}
+
+{% block body %}
+
+<div class="btn-group pull-right" style="margin-top: 15px;">              
+  <button class="btn btn-primary "><span class="glyphicon glyphicon-cog"></span> Selectioner une action</button>
+  <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu"">
+    <li><a href="{{ path('ben_edit_user', { 'id': entity.id }) }}"><span class="glyphicon glyphicon-edit"></span> modifier</a></li>
+    <li><a id="btnPrint"><span class="glyphicon glyphicon-print"></span> imprimer</a></li>
+    <li><a href="#" id="js-delete"><span class="glyphicon glyphicon-trash"></span> Supprimer</a></li>
+  </ul>
+</div>
+<h3><span class="glyphicon glyphicon-user"></span> {{ entity.employe.nom }}</h3>
+</br>
+<div class="row">
+	<div class="col-md-12">
+    <div class="box">
+      <header>
+          <h4><span class="glyphicon glyphicon-file"></span> Information générale</h4>
+      </header>
+        <ul class="list-group">
+          <li class="list-group-item"><strong>Email de l'Employe :</strong> {{ entity.email }}</li>
+          <li class="list-group-item"><strong>Nom de l'Employe :</strong> {{ entity.employe.nom }}</li>
+          <li class="list-group-item"><strong>CIN de l'Employe :</strong> {{ entity.employe.cin }}</li>
+          <li class="list-group-item"><strong>Tele de l'Employe :</strong> {{ entity.employe.tel }}</li>
+          <li class="list-group-item"><strong>Adresse de l'Employe :</strong> {{ entity.employe.adresse }}</li>
+          <li class="list-group-item"><strong>Service de l'Employe :</strong> {{ entity.service.libele }}</li>
+          <li class="list-group-item"><strong>Roles de l'Employe :</strong>{% for r in entity.roles %} {{ r }} {% endfor%}</li>
+        <header>
+          <h4><span class="glyphicon glyphicon-file"></span> Information du compte </h4>
+      </header>
+       <li class="list-group-item"><strong>Username de l'Employe :</strong>  {{ entity.username }} </li>
+       <li class="list-group-item"><strong>Activation du compte :</strong> {% if entity.isActive ==1 %} Active {% else%} Désactivé {% endif %}</li>
+
+        </br>
+
+          <li class="list-group-item"><strong>Ajouté le :</strong> {% if entity.created %}{{ entity.created|date('d/m/Y') }}{% endif %}</li>
+        </ul>
+    </div>
+	</div>
+	
+</div>
+
+{% endblock body %}
+
+ {% block javascripts %}
+{{ parent() }}
+<script> 
+    (function($) {
+
+        $('#js-delete').on('click', function(){
+            $('#deleteForm').submit();
+            return false;
+        });
+    })(jQuery);
+</script>
+{% endblock %}

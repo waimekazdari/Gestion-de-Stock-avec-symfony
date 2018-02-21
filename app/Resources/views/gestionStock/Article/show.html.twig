@@ -1,0 +1,51 @@
+{% extends "layout.html.twig" %}
+{% block title %}
+Article
+{% endblock %}
+{% block body %}
+<div class="btn-group pull-right" style="margin-top: 15px;">              
+  <button class="btn btn-primary "><span class="glyphicon glyphicon-cog"></span> Selectioner une action</button>
+  <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu"">
+    <li><a href="{{ path('article_edit', { 'id': entity.id }) }}"><span class="glyphicon glyphicon-edit"></span> modifier</a></li>
+    <li><a id="btnPrint"><span class="glyphicon glyphicon-print"></span> imprimer</a></li>
+    <li><a href="#" id="js-delete"><span class="glyphicon glyphicon-trash"></span> Supprimer</a></li>
+  </ul>
+</div>
+<div style="margin-left:220px; width:2000px;">
+<h3 ><span class="glyphicon glyphicon-share-alt"></span> {{ entity.libele }}</h3>
+
+<div class="row">
+<div class="col-md-4">
+    <div class="box">
+      <header>
+          <h4><span class="glyphicon glyphicon-file"></span> Article</h4>
+      </header>
+        <ul class="list-group">
+          <li class="list-group-item"><strong>Référence de l'Article :</strong> {{ entity.ref }}</li>
+          <li class="list-group-item"><strong>Code de l'Article :</strong>  {{ entity.code }} </li>
+          <li class="list-group-item"><strong>Catégorie :</strong> {{ entity.category.libele }}</li>
+          <li class="list-group-item"><strong>Code de la Catégorie :</strong> {{ entity.category.code }}</li>
+        </ul>
+    </div>
+</div>
+</div>
+</div>
+<form id="deleteForm" action="{{ path('article_delete', { 'id': entity.id }) }}" method="POST">
+    {{ form_widget(delete_form) }}
+</form> 
+{% endblock %}
+{% block javascripts %}
+{{ parent() }}
+<script> 
+    (function($) {
+
+        $('#js-delete').on('click', function(){
+            $('#deleteForm').submit();
+            return false;
+        });
+    })(jQuery);
+</script>
+{% endblock %}

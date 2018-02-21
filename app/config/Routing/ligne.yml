@@ -1,0 +1,40 @@
+ligne:
+    path:     /
+    defaults: { _controller: "AppBundle:Ligne:index" }
+
+ligne_ajax:
+    path:     /ajaxliste
+    defaults: { _controller: "AppBundle:Ligne:ajaxliste" }
+    requirements: { _method: post }
+
+ligne_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Ligne:show" }
+
+ligne_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Ligne:new" }
+
+ligne_create:
+    path:     /create
+    defaults: { _controller: "AppBundle:Ligne:create" }
+    requirements: { _method: post }
+
+ligne_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Ligne:edit" }
+
+ligne_update:
+    path:     /{id}/update
+    defaults: { _controller: "AppBundle:Ligne:update" }
+    requirements: { _method: post|put }
+
+ligne_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Ligne:delete" }
+    requirements: { _method: post|delete }
+
+ligne_remove:
+    path:     /remove
+    defaults: { _controller: "AppBundle:Ligne:remove" }
+    requirements: { _method: post|delete }

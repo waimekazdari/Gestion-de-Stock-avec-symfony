@@ -1,0 +1,39 @@
+entree:
+    path:     /
+    defaults: { _controller: "AppBundle:Entree:index" }
+entree_ajax:
+    path:     /ajaxliste
+    defaults: { _controller: "AppBundle:Entree:ajaxliste" }
+    requirements: { _method: post }
+
+entree_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Entree:show" }
+    
+entree_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Entree:newMultiple" }
+
+entree_create:
+    path:     /create
+    defaults: { _controller: "AppBundle:Entree:createMultiple" }
+    requirements: { _method: post }
+
+entree_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Entree:edit" }
+
+entree_update:
+    path:     /{id}/update
+    defaults: { _controller: "AppBundle:Entree:update" }
+    requirements: { _method: post|put }
+
+entree_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Entree:delete" }
+    requirements: { _method: post|delete }
+
+entree_remove:
+    path:     /remove
+    defaults: { _controller: "AppBundle:Entree:remove" }
+    requirements: { _method: post|delete }

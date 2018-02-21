@@ -1,0 +1,14 @@
+<legend>Information de l'Article</legend> 
+
+{{ form_start(form,{'attr':{'novalidate':'novalidate'}})
+}}
+
+{{ form_row(form.livraison, { 'label': 'La Référence du marché de la Livraison','attr':{'class':'form-control'}}) }}
+{{ form_row(form.article, { 'label': 'La Référence de l\'Article de la Ligne','attr':{'class':'form-control'}}) }}
+{{ form_row(form.quantite, { 'label': 'La Quantite de l\'Article','attr':{'class':'form-control'}}) }}
+{{ form_row(form.prix, { 'label': 'prix de l\'Article','attr':{'class':'form-control'}}) }}
+{{ form_row(form.duree, { 'label': 'La duree de la garantie','attr':{'class':'form-control'}}) }}
+{{ form_row(form.dateGarantie, { 'label': 'La délai de la garantie','attr':{'class':'form-control'}}) }}
+
+
+{{ form_rest(form) }} 

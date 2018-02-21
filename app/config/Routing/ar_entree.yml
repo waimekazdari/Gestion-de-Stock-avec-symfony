@@ -1,0 +1,40 @@
+ar_entree:
+    path:     /
+    defaults: { _controller: "AppBundle:Ar_entree:index" }
+
+ar_entree_ajax:
+    path:     /ajaxliste
+    defaults: { _controller: "AppBundle:Ar_entree:ajaxliste" }
+    requirements: { _method: post }
+
+ar_entree_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Ar_entree:show" }
+
+ar_entree_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Ar_entree:new" }
+
+ar_entree_create:
+    path:     /create
+    defaults: { _controller: "AppBundle:Ar_entree:create" }
+    requirements: { _method: post }
+
+ar_entree_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Ar_entree:edit" }
+
+ar_entree_update:
+    path:     /{id}/update
+    defaults: { _controller: "AppBundle:Ar_entree:update" }
+    requirements: { _method: post|put }
+
+ar_entree_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Ar_entree:delete" }
+    requirements: { _method: post|delete }
+
+ar_entree_remove:
+    path:     /remove
+    defaults: { _controller: "AppBundle:Ar_entree:remove" }
+    requirements: { _method: post|delete }

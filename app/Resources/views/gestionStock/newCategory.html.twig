@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+{{ form_start(form,{'attr':{'novalidate':'novalidate'}})
+}}
+{{ form_widget(form)}}
+<button type="submit"> Ajouter </button>
+{{ form_end(form)}}
+{% block javascripts%}
+ <script src="{{ asset('Resources/public/js/jquery.min.js') }}"></script>
+    <script>window.jQuery || document.write('<script src="../../Resources/public/js/jquery.min.js"><\/script>')</script>
+
+    <script src="{{ asset('Resources/public/js/bootstrap.min.js') }}"></script>
+
+    <script src="{{ asset('Resources/public/js/holder.js') }}"></script>
+ {% endblock%}
+{% endblock %}

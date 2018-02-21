@@ -1,0 +1,27 @@
+{% extends "layout.html.twig" %}
+{% block title %}
+Mise à jour compte
+{% endblock %}
+{% block body %}
+
+    {% include "gestionStock/MyProfile/form.html.twig" %}
+
+<form id="deleteForm" action="{{ path('article_delete',{'id': entity.id}) }}" method="post" class="">
+   <!-- {{ form_widget(delete_form) }} -->
+</form> 
+</div>
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+<script> 
+    (function($) {
+        
+        $('#js-delete').on('click', function(){
+            $('#deleteForm').submit();
+            return false;
+        });
+
+    })(jQuery);
+</script>
+{% endblock %}

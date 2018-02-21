@@ -1,0 +1,27 @@
+{% extends "layout.html.twig" %}
+{% block title %}
+Ajout Employe
+{% endblock %}
+{% block body %}
+<h3><b><span class="glyphicon glyphicon-user block"></span> Inscription </b></h3>
+<div style="width:600px; margin-left:300px;padding:30px;">
+<legend>Information d'Utilisateur</legend> 
+{{ form_start(form,{'attr':{'novalidate':'novalidate'}})
+}}
+{{form_row(form.email,{'attr':{'class':'form-control'}})}}
+{{form_row(form.username,{'attr':{'class':'form-control'}})}}
+{{ form_row(form.plainPassword.first,{'attr':{'class':'form-control'}}) }}
+{{ form_row(form.plainPassword.second,{'attr':{'class':'form-control'}}) }}
+
+{{form_row(form.image.file,{'attr':{'class':'form-control'}})}}
+{{form_row(form.employe.nom,{'attr':{'class':'form-control'}})}}
+{{form_row(form.employe.CIN,{'attr':{'class':'form-control'}})}}
+{{form_row(form.employe.tel,{'attr':{'class':'form-control'}})}}
+{{form_row(form.employe.adresse,{'attr':{'class':'form-control'}})}}
+{{form_row(form.service,{'attr':{'class':'form-control'}})}}
+
+<br><center><button class="btn btn-success" type="submit">Register!</button></center>
+{{ form_end(form) }}
+</div>
+
+{% endblock %}

@@ -1,0 +1,40 @@
+ar_sortie:
+    path:     /
+    defaults: { _controller: "AppBundle:Ar_sortie:index" }
+
+ar_sortie_ajax:
+    path:     /ajaxliste
+    defaults: { _controller: "AppBundle:Ar_sortie:ajaxliste" }
+    requirements: { _method: post }
+
+ar_sortie_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Ar_sortie:show" }
+
+ar_sortie_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Ar_sortie:new" }
+
+ar_sortie_create:
+    path:     /create
+    defaults: { _controller: "AppBundle:Ar_sortie:create" }
+    requirements: { _method: post }
+
+ar_sortie_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Ar_sortie:edit" }
+
+ar_sortie_update:
+    path:     /{id}/update
+    defaults: { _controller: "AppBundle:Ar_sortie:update" }
+    requirements: { _method: post|put }
+
+ar_sortie_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Ar_sortie:delete" }
+    requirements: { _method: post|delete }
+
+ar_sortie_remove:
+    path:     /remove
+    defaults: { _controller: "AppBundle:Ar_sortie:remove" }
+    requirements: { _method: post|delete }
